@@ -51,7 +51,7 @@ function wakeUpPCFisso() {
   // =====================
   
   function shutdownPCFisso() {
-      alert("Invio comando di spegnimento al PC Fisso");
+      alert("Invio comando di spegnimento al PC Fissos");
       fetch("http://188.245.185.96:7001/shutdown/fisso")
         .then(response => response.json())
         .then(data => alert("PC Fisso: " + data.status))
