@@ -4,7 +4,7 @@ import logging
 from flask_cors import CORS  # <--- aggiunto
 
 app = Flask(__name__)
-CORS(app, origins=["http://188.245.185.96:7000"])
+CORS(app, origins=["http://188.245.185.96:7000","http://appiccopc.duckdns.org:7000"])
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)

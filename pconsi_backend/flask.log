@@ -1,0 +1,62 @@
+INFO:app:Avvio del backend Flask
+ * Serving Flask app 'app'
+ * Debug mode: off
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:7001
+ * Running on http://188.245.185.96:7001
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug:10.0.0.72 - - [06/Apr/2025 15:47:21] "OPTIONS /wake/fisso HTTP/1.1" 200 -
+INFO:app:Endpoint /wake/fisso chiamato
+INFO:root:Invio comando SSH: ssh manuelpringols@10.0.0.94 'bash /home/manuelpringols/accendi_pc/accendi_pc-pisso.sh'
+Sending magic packet to 192.168.1.255:9 with 00:d8:61:fc:80:10
+Pacchetto Wake-on-LAN inviato a 00:d8:61:fc:80:10
+INFO:root:accendi_pc-pisso acceso con successo.
+INFO:werkzeug:10.0.0.72 - - [06/Apr/2025 15:47:22] "GET /wake/fisso HTTP/1.1" 200 -
+INFO:werkzeug:10.0.0.72 - - [06/Apr/2025 15:47:26] "OPTIONS /wake/mini_pc HTTP/1.1" 200 -
+INFO:app:Endpoint /wake/mini_pc chiamato
+INFO:root:Invio comando SSH: ssh manuelpringols@10.0.0.94 'bash /home/manuelpringols/accendi_pc/accendi_pc.sh'
+Sending magic packet to 192.168.1.255:9 with b0:41:6f:0f:d6:39
+Pacchetto Wake-on-LAN inviato a b0:41:6f:0f:d6:39
+INFO:root:accendi_pc acceso con successo.
+INFO:werkzeug:10.0.0.72 - - [06/Apr/2025 15:47:27] "GET /wake/mini_pc HTTP/1.1" 200 -
+INFO:werkzeug:10.0.0.99 - - [06/Apr/2025 15:55:44] "OPTIONS /wake/mini_pc HTTP/1.1" 200 -
+INFO:app:Endpoint /wake/mini_pc chiamato
+INFO:root:Invio comando SSH: ssh manuelpringols@10.0.0.94 'bash /home/manuelpringols/accendi_pc/accendi_pc.sh'
+Sending magic packet to 192.168.1.255:9 with b0:41:6f:0f:d6:39
+Pacchetto Wake-on-LAN inviato a b0:41:6f:0f:d6:39
+INFO:root:accendi_pc acceso con successo.
+INFO:werkzeug:10.0.0.99 - - [06/Apr/2025 15:55:45] "GET /wake/mini_pc HTTP/1.1" 200 -
+INFO:app:Endpoint /wake/fisso chiamato
+INFO:root:Invio comando SSH: ssh manuelpringols@10.0.0.94 'bash /home/manuelpringols/accendi_pc/accendi_pc-pisso.sh'
+Sending magic packet to 192.168.1.255:9 with 00:d8:61:fc:80:10
+Pacchetto Wake-on-LAN inviato a 00:d8:61:fc:80:10
+INFO:root:accendi_pc-pisso acceso con successo.
+INFO:werkzeug:10.0.0.72 - - [06/Apr/2025 15:56:31] "GET /wake/fisso HTTP/1.1" 200 -
+INFO:app:Endpoint /wake/mini_pc chiamato
+INFO:root:Invio comando SSH: ssh manuelpringols@10.0.0.94 'bash /home/manuelpringols/accendi_pc/accendi_pc.sh'
+Sending magic packet to 192.168.1.255:9 with b0:41:6f:0f:d6:39
+Pacchetto Wake-on-LAN inviato a b0:41:6f:0f:d6:39
+INFO:root:accendi_pc acceso con successo.
+INFO:werkzeug:10.0.0.72 - - [06/Apr/2025 15:57:02] "GET /wake/mini_pc HTTP/1.1" 200 -
+INFO:werkzeug:10.0.0.99 - - [06/Apr/2025 16:03:33] "OPTIONS /wake/mini_pc HTTP/1.1" 200 -
+INFO:app:Endpoint /wake/mini_pc chiamato
+INFO:root:Invio comando SSH: ssh manuelpringols@10.0.0.94 'bash /home/manuelpringols/accendi_pc/accendi_pc.sh'
+Sending magic packet to 192.168.1.255:9 with b0:41:6f:0f:d6:39
+Pacchetto Wake-on-LAN inviato a b0:41:6f:0f:d6:39
+INFO:root:accendi_pc acceso con successo.
+INFO:werkzeug:10.0.0.99 - - [06/Apr/2025 16:03:34] "GET /wake/mini_pc HTTP/1.1" 200 -
+INFO:werkzeug:10.0.0.72 - - [06/Apr/2025 17:04:03] "OPTIONS /wake/mini_pc HTTP/1.1" 200 -
+INFO:app:Endpoint /wake/mini_pc chiamato
+INFO:root:Invio comando SSH: ssh manuelpringols@10.0.0.94 'bash /home/manuelpringols/accendi_pc/accendi_pc.sh'
+Sending magic packet to 192.168.1.255:9 with b0:41:6f:0f:d6:39
+Pacchetto Wake-on-LAN inviato a b0:41:6f:0f:d6:39
+INFO:root:accendi_pc acceso con successo.
+INFO:werkzeug:10.0.0.72 - - [06/Apr/2025 17:04:04] "GET /wake/mini_pc HTTP/1.1" 200 -
+INFO:werkzeug:10.0.0.72 - - [07/Apr/2025 18:48:03] "OPTIONS /wake/mini_pc HTTP/1.1" 200 -
+INFO:app:Endpoint /wake/mini_pc chiamato
+INFO:root:Invio comando SSH: ssh manuelpringols@10.0.0.94 'bash /home/manuelpringols/accendi_pc/accendi_pc.sh'
+Sending magic packet to 192.168.1.255:9 with b0:41:6f:0f:d6:39
+Pacchetto Wake-on-LAN inviato a b0:41:6f:0f:d6:39
+INFO:root:accendi_pc acceso con successo.
+INFO:werkzeug:10.0.0.72 - - [07/Apr/2025 18:48:04] "GET /wake/mini_pc HTTP/1.1" 200 -

@@ -3,7 +3,7 @@ function wakeUpPCFisso(pcNumber) {
   alert("Richiesta di accensione per PC " + "Fisso");
 
   // Invia una richiesta al server per accendere il PC fisso
-  fetch(`http://188.245.185.96:6666/wake/fisso`, {
+  fetch(`http://188.245.185.96:7001/wake/fisso`, {
       method: 'GET', // Puoi usare 'GET' se il server accetta una richiesta GET, o 'POST' se richiede un POST
       headers: {
           'Content-Type': 'application/json', // Assicurati che il server accetti il tipo di contenuto giusto
@@ -13,7 +13,7 @@ function wakeUpPCFisso(pcNumber) {
   .then(response => response.json())
   .then(data => {
       console.log(data); // Gestisci la risposta
-      alert("Risposta dal server: " + data.message); // Mostra il messaggio di risposta, se presente
+      alert("Script eseguito sul server: " + data.status); // Mostra il messaggio di risposta, se presente
   })
   .catch(error => {
       console.error('Errore:', error); // Gestisci eventuali errori
@@ -26,7 +26,7 @@ function wakeUpMini_PC(pcNumber) {
   alert("Richiesta di accensione per PC " + "Mini-Pc");
 
   // Invia una richiesta al server per accendere il mini PC
-  fetch(`http://188.245.185.96:6666/wake/mini_pc`, {
+  fetch(`http://188.245.185.96:7001/wake/mini_pc`, {
       method: 'GET', // Puoi usare 'GET' se il server accetta una richiesta GET, o 'POST' se richiede un POST
       headers: {
           'Content-Type': 'application/json', // Assicurati che il server accetti il tipo di contenuto giusto
@@ -36,7 +36,7 @@ function wakeUpMini_PC(pcNumber) {
   .then(response => response.json())
   .then(data => {
       console.log(data); // Gestisci la risposta
-      alert("Risposta dal server: " + data.message); // Mostra il messaggio di risposta, se presente
+      alert("Script eseguito sul server: " + data.status); // Mostra il messaggio di risposta, se presente
   })
   .catch(error => {
       console.error('Errore:', error); // Gestisci eventuali errori
