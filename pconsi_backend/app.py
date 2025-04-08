@@ -2,9 +2,11 @@ from flask import Flask, jsonify
 from wake_utils import send_wake_command
 import logging
 from flask_cors import CORS  # <--- aggiunto
+import subprocess
+import requests
 
 app = Flask(__name__)
-CORS(app, origins=["http://188.245.185.96:7000","http://appiccopc.duckdns.org:7000"])
+CORS(app, origins=["http://188.245.185.96:7000", "http://appiccopc.duckdns.org:7000"])
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -21,8 +23,7 @@ def wake_pc2():
     result = send_wake_command("accendi_pc")
     return jsonify({"status": result})
 
-
-    def is_pc_reachable(ip):
+def is_pc_reachable(ip):
     try:
         output = subprocess.check_output(["ping", "-c", "1", "-W", "1", ip], stderr=subprocess.DEVNULL)
         return True
@@ -43,7 +44,6 @@ def check_status():
         })
     except Exception as e:
         return jsonify({"error": "Impossibile contattare la Raspberry", "details": str(e)}), 500
-
 
 if __name__ == "__main__":
     app.logger.info("Avvio del backend Flask")
