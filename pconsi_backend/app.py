@@ -1,5 +1,7 @@
 from flask import Flask, jsonify
 from wake_utils import send_wake_command
+from wake_utils import send_shutdown_command
+
 import logging
 from flask_cors import CORS  # <--- aggiunto
 import subprocess
