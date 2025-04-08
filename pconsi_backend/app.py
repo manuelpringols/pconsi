@@ -34,9 +34,9 @@ def is_pc_reachable(ip):
 def check_status():
     try:
         # Chiama l'endpoint della Raspberry per ottenere lo stato dei PC
-        response = requests.get("http://10.0.0.93:5000/status", timeout=2)
+        response = requests.get("http://10.0.0.94:5000/status", timeout=2)
         data = response.json()
-
+ 
         # Restituisce lo stato dei PC al frontend
         return jsonify({
             "fisso": data["fisso"],  # Stato del PC fisso
