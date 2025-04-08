@@ -21,6 +21,30 @@ def wake_pc2():
     result = send_wake_command("accendi_pc")
     return jsonify({"status": result})
 
+
+    def is_pc_reachable(ip):
+    try:
+        output = subprocess.check_output(["ping", "-c", "1", "-W", "1", ip], stderr=subprocess.DEVNULL)
+        return True
+    except subprocess.CalledProcessError:
+        return False
+
+@app.route("/status", methods=["GET"])
+def check_status():
+    try:
+        # Chiama l'endpoint della Raspberry per ottenere lo stato dei PC
+        response = requests.get("http://10.0.0.93:5000/status", timeout=2)
+        data = response.json()
+
+        # Restituisce lo stato dei PC al frontend
+        return jsonify({
+            "fisso": data["fisso"],  # Stato del PC fisso
+            "mini_pc": data["mini_pc"]  # Stato del Mini PC
+        })
+    except Exception as e:
+        return jsonify({"error": "Impossibile contattare la Raspberry", "details": str(e)}), 500
+
+
 if __name__ == "__main__":
     app.logger.info("Avvio del backend Flask")
     app.run(host="0.0.0.0", port=7001)

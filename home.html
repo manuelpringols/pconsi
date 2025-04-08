@@ -13,11 +13,18 @@
 
   <div class="container">
     <h1>Controlla i tuoi PC</h1>
-    <p>Comando interstellare di accensione</p>
+    <p>Comando interstellare di accensione e spegnimento dei PC</p>
 
     <div class="buttons">
-      <button class="wake-btn" onclick="wakeUpPCFisso(1)">🚀 Accendi Pc Fisso</button>
-      <button class="wake-btn" onclick="wakeUpMini_PC(2)">🛸 Accendi Mini Pc</button>
+      <div>
+        <button id="accendi-fisso" class="wake-btn" onclick="wakeUpPCFisso()" aria-label="Accendi il PC Fisso">🚀 Accendi Pc Fisso</button>
+        <button id="spegni-fisso" class="shutdown-btn" onclick="shutdownPCFisso()" style="display: none;" aria-label="Spegni il PC Fisso">💤 Spegni Pc Fisso</button>
+      </div>
+      
+      <div>
+        <button id="accendi-mini" class="wake-btn" onclick="wakeUpMiniPC()" aria-label="Accendi il Mini PC">🛸 Accendi Mini Pc</button>
+        <button id="spegni-mini" class="shutdown-btn" onclick="shutdownMiniPC()" style="display: none;" aria-label="Spegni il Mini PC">💤 Spegni Mini Pc</button>
+      </div>
     </div>
   </div>
 
