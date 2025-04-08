@@ -23,6 +23,18 @@ def wake_pc2():
     result = send_wake_command("accendi_pc")
     return jsonify({"status": result})
 
+
+@app.route("/shutdown/fisso", methods=["GET"])
+def shutdown_pc1():
+    app.logger.info("Endpoint /shutdown/fisso chiamato")
+    result = send_shutdown_command("spegni_pc_fisso")
+    return jsonify({"status": result})
+
+@app.route("/shutdown/mini_pc", methods=["GET"])
+def shutdown_pc2():
+    app.logger.info("Endpoint /shutdown/mini_pc chiamato")
+    result = send_shutdown_command("spegni_pc")
+    return jsonify({"status": result})
 def is_pc_reachable(ip):
     try:
         output = subprocess.check_output(["ping", "-c", "1", "-W", "1", ip], stderr=subprocess.DEVNULL)

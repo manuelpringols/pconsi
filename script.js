@@ -89,23 +89,31 @@ function wakeUpPCFisso() {
   }
   
   function updateUI(pcName, isOn) {
-      const accendiBtn = document.getElementById(`accendi-${pcName}`);
-      const spegniBtn = document.getElementById(`spegni-${pcName}`);
-  
-      if (isOn) {
-          // PC acceso
-          accendiBtn.style.backgroundColor = "#4CAF50"; // verde
-          accendiBtn.textContent = "🟢 Acceso - " + (pcName === "fisso" ? "PC Fisso" : "Mini PC");
-  
-          spegniBtn.style.display = "inline-block"; // Mostra pulsante di spegnimento
-      } else {
-          // PC spento
-          accendiBtn.style.backgroundColor = "#888"; // grigio
-          accendiBtn.textContent = "🔴 Spento - " + (pcName === "fisso" ? "PC Fisso" : "Mini PC");
-  
-          spegniBtn.style.display = "none"; // Nasconde il pulsante
-      }
-  }
+    const accendiBtn = document.getElementById(`accendi-${pcName}`);
+    const spegniBtn = document.getElementById(`spegni-${pcName}`);
+
+    // Stili comuni
+    accendiBtn.style.cursor = "pointer";
+    spegniBtn.style.cursor = "pointer";
+    spegniBtn.style.marginTop = "8px"; // distanzia dal bottone principale
+    spegniBtn.style.transition = "all 0.3s ease";
+
+    if (isOn) {
+        // PC acceso
+        accendiBtn.style.backgroundColor = "#4CAF50"; // verde
+        accendiBtn.textContent = "🟢 Acceso - " + (pcName === "fisso" ? "PC Fisso" : "Mini PC");
+
+        spegniBtn.style.display = "inline-block";
+        spegniBtn.style.opacity = "1";
+    } else {
+        // PC spento
+        accendiBtn.style.backgroundColor = "#888"; // grigio
+        accendiBtn.textContent = "🔴 Spento - " + (pcName === "fisso" ? "PC Fisso" : "Mini PC");
+
+        spegniBtn.style.display = "none";
+        spegniBtn.style.opacity = "0";
+    }
+}
   
   // Chiamata allo startup
   window.onload = () => {
