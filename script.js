@@ -92,28 +92,31 @@ function wakeUpPCFisso() {
     const accendiBtn = document.getElementById(`accendi-${pcName}`);
     const spegniBtn = document.getElementById(`spegni-${pcName}`);
 
-    // Stili comuni
     accendiBtn.style.cursor = "pointer";
     spegniBtn.style.cursor = "pointer";
-    spegniBtn.style.marginTop = "8px"; // distanzia dal bottone principale
+    spegniBtn.style.marginTop = "8px";
     spegniBtn.style.transition = "all 0.3s ease";
 
+    // Rimuovi eventuali classi animate precedenti
+    accendiBtn.classList.remove("pulse-green", "pulse-red");
+
     if (isOn) {
-        // PC acceso
-        accendiBtn.style.backgroundColor = "#4CAF50"; // verde
+        accendiBtn.style.backgroundColor = "#4CAF50";
         accendiBtn.textContent = "🟢 Acceso - " + (pcName === "fisso" ? "PC Fisso" : "Mini PC");
+        accendiBtn.classList.add("pulse-green");
 
         spegniBtn.style.display = "inline-block";
         spegniBtn.style.opacity = "1";
     } else {
-        // PC spento
-        accendiBtn.style.backgroundColor = "#888"; // grigio
+        accendiBtn.style.backgroundColor = "#888";
         accendiBtn.textContent = "🔴 Spento - " + (pcName === "fisso" ? "PC Fisso" : "Mini PC");
+        accendiBtn.classList.add("pulse-red");
 
         spegniBtn.style.display = "none";
         spegniBtn.style.opacity = "0";
     }
 }
+
   
   // Chiamata allo startup
   window.onload = () => {

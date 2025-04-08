@@ -96,3 +96,25 @@ p {
   transform: scale(1.05);
   filter: brightness(1.1);
 }
+
+
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 10px #4CAF50; }
+  50% { box-shadow: 0 0 20px #4CAF50; }
+  100% { box-shadow: 0 0 10px #4CAF50; }
+}
+
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 10px #e53935; }
+  50% { box-shadow: 0 0 20px #e53935; }
+  100% { box-shadow: 0 0 10px #e53935; }
+}
+
+.pulse-green {
+  animation: pulse-green 1.5s infinite;
+}
+
+.pulse-red {
+  animation: pulse-red 1.5s infinite;
+}
+ 
